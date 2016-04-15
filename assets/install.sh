@@ -68,6 +68,21 @@ if [[ -n "$(find /etc/postfix/certs -iname *.crt)" && -n "$(find /etc/postfix/ce
   postconf -P "submission/inet/smtpd_recipient_restrictions=permit_sasl_authenticated,reject_unauth_destination"
 fi
 
+#####################
+# External forwarding
+#####################
+
+if [[ -v mail_forward_to ]]; then
+  # /etc/postfix/main.cf
+  postconf -e virtual_alias_domains=$maildomain
+  postconf -e virtual_alias_maps=hash:/etc/postfix/virtual
+  # /etc/postfix/virtual
+  cat >> /etc/postfix/virtual <<EOF
+@$maildomain      $mail_forward_to
+EOF
+  postmap /etc/postfix/virtual
+fi
+
 #############
 #  opendkim
 #############

@@ -1,0 +1,13 @@
+version: '2'
+services:
+  # test setup for image
+  postfix:
+    build: .
+    hostname: localdomain
+    ports:
+      - "1025:25"
+    environment:
+      smtp_user: "user:pwd"
+      # if you use this for testing as well, use a different one, thanks:
+      mail_forward_to: st@wetransform.to
+      maildomain: localdomain

@@ -40,6 +40,19 @@ TLS and OpenDKIM support are optional.
 			--name postfix -d catatnight/postfix
 	```
 
+## Additional configuration options
+
+### Mail forwarding
+
+To enable simple mail forwarding for the whole mail domain to
+an external address, use the `mail_forward_to` environment variable,
+for example:
+
+```
+-e mail_forward_to=admin@example.com
+```
+
+
 ## Note
 + Login credential should be set to (`username@mail.example.com`, `password`) in Smtp Client
 + You can assign the port of MTA on the host machine to one other than 25 ([postfix how-to](http://www.postfix.org/MULTI_INSTANCE_README.html))
