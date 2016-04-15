@@ -11,7 +11,7 @@ TLS and OpenDKIM support are optional.
 1. Build image
 
 	```bash
-	$ sudo docker pull catatnight/postfix
+	$ sudo docker pull stempler/postfix
 	```
 
 ## Usage
@@ -20,7 +20,7 @@ TLS and OpenDKIM support are optional.
 	```bash
 	$ sudo docker run -p 25:25 \
 			-e maildomain=mail.example.com -e smtp_user=user:pwd \
-			--name postfix -d catatnight/postfix
+			--name postfix -d stempler/postfix
 	# Set multiple user credentials: -e smtp_user=user1:pwd1,user2:pwd2,...,userN:pwdN
 	```
 2. Enable OpenDKIM: save your domain key ```.private``` in ```/path/to/domainkeys```
@@ -29,7 +29,7 @@ TLS and OpenDKIM support are optional.
 	$ sudo docker run -p 25:25 \
 			-e maildomain=mail.example.com -e smtp_user=user:pwd \
 			-v /path/to/domainkeys:/etc/opendkim/domainkeys \
-			--name postfix -d catatnight/postfix
+			--name postfix -d stempler/postfix
 	```
 3. Enable TLS(587): save your SSL certificates ```.key``` and ```.crt``` to  ```/path/to/certs```
 
@@ -37,7 +37,7 @@ TLS and OpenDKIM support are optional.
 	$ sudo docker run -p 587:587 \
 			-e maildomain=mail.example.com -e smtp_user=user:pwd \
 			-v /path/to/certs:/etc/postfix/certs \
-			--name postfix -d catatnight/postfix
+			--name postfix -d stempler/postfix
 	```
 
 ## Additional configuration options
@@ -61,4 +61,5 @@ for example:
 ## Reference
 + [Postfix SASL Howto](http://www.postfix.org/SASL_README.html)
 + [How To Install and Configure DKIM with Postfix on Debian Wheezy](https://www.digitalocean.com/community/articles/how-to-install-and-configure-dkim-with-postfix-on-debian-wheezy)
-+ TBD
++ [Forward every mail to an external address](http://blog.benoitblanchon.fr/postfix-forward/)
++ [Versatile Postfix Mail Server Docker Image](https://github.com/MarvAmBass/docker-versatile-postfix)
