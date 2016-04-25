@@ -23,7 +23,7 @@ TLS and OpenDKIM support are optional.
 			--name postfix -d stempler/postfix
 	# Set multiple user credentials: -e smtp_user=user1:pwd1,user2:pwd2,...,userN:pwdN
 	```
-2. Enable OpenDKIM: save your domain key ```.private``` in ```/path/to/domainkeys```
+2. Enable OpenDKIM: save your domain key ```.private``` in ```/path/to/domainkeys```. Note that the image assumes `mail` as the name of the selector of the domain key.
 
 	```bash
 	$ sudo docker run -p 25:25 \
