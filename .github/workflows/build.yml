@@ -1,0 +1,13 @@
+name: Build
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    uses: wetransform/gha-workflows/.github/workflows/dockerfile-build.yml@v2.1.0
+    with:
+      image: wetransform/postfix
+      tag: pr
