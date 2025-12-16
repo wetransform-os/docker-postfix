@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    uses: wetransform/gha-workflows/.github/workflows/dockerfile-build.yml@v2.1.0
+    uses: wetransform/gha-workflows/.github/workflows/dockerfile-build.yml@14995ce361a7c42fb9665895fd44c9483e02351d # v3.8.3
     with:
       image: wetransform/postfix
       tag: pr
