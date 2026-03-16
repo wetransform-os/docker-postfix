@@ -1,4 +1,4 @@
-From ubuntu:trusty
+From ubuntu:noble
 MAINTAINER Simon Templer <simon@templer.cc>
 
 # Set noninteractive mode for apt-get
