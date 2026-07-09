@@ -1,4 +1,4 @@
-From ubuntu:trusty
+From ubuntu:14.04.5
 MAINTAINER Simon Templer <simon@templer.cc>
 
 # Set noninteractive mode for apt-get
