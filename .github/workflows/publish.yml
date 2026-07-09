@@ -8,7 +8,7 @@ on:
 
 jobs:
   publish:
-    uses: wetransform/gha-workflows/.github/workflows/dockerfile-publish.yml@v2.1.0
+    uses: wetransform/gha-workflows/.github/workflows/dockerfile-publish.yml@9264b26e1baa46d2ef3c860cd479bfae76ee12a3 # v2.5.1
     with:
       image: wetransform/postfix
       tag: latest
